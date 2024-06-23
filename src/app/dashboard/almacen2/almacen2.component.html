@@ -1,0 +1,17 @@
+<div class="container">
+  <mat-form-field>
+      <mat-label>Cantidad</mat-label>
+    <input matInput type="number" placeholder="Cantidad" [(ngModel)]="cantidad">
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label>Precio</mat-label>
+    <input matInput type="number" placeholder="Precio por unidad" [(ngModel)]="precio">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" (click)="calcularTotal()">Calcular Total</button>
+  <br><br>
+  <div *ngIf="totalAPagar > 0">
+    <p>Total a pagar: S/. {{ totalAPagar }}</p>
+    <p *ngIf="descuentoAplicado">Se aplicó un descuento del 20% por ser mayor a S/. 200.</p>
+  </div>
+</div>
