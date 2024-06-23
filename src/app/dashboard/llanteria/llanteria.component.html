@@ -1,0 +1,11 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput type="number" placeholder="Cantidad de llantas a comprar" [(ngModel)]="cantidadLlantas">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" (click)="calcularTotal()">Calcular Total</button>
+  <br><br>
+  <div *ngIf="cantidadLlantas > 0">
+    <p>Total a pagar: S/. {{ calcularTotal() }}</p>
+  </div>
+</div>
